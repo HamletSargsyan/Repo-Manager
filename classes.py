@@ -56,6 +56,8 @@ class RepoManager:
                 zip_file.write(response.content)
                 
             print(f"{self.repo_name} успешно установлен в {self.base_path}.")
+        else:
+            print(f"У репозитория нет релизов")
 
     def update(self):
         if not self._check_config_file():
