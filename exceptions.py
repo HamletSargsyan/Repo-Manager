@@ -1,4 +1,8 @@
-class CommandNotFound(BaseException):
+class CommandNotFoundError(Exception):
     ...
 
+class RepoNotInstalledError(Exception):
+    ...
 
+class NoConfigFileError(Exception):
+    ...
