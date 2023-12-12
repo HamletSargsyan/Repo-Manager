@@ -21,7 +21,7 @@ class Settings:
         except json.JSONDecodeError:
             alert('Произошла ошибка при сохранении настроек')
 
-    def get(self, key: str, default = {}) -> Union[Any, None]:
+    def get(self, key: str, default = {}) -> dict:
         return self.open().get(key, default)
 
     def get_categories(self) -> List[Tuple]:
