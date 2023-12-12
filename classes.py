@@ -6,7 +6,7 @@ from exceptions import RepoNotInstalledError, NoConfigFileError
 class PackageManager:
     def __init__(self):
         self._settings = Settings()
-        self.repos = self._settings.get("repos", {})
+        self.repos = self._settings.get("repos")
 
     def install(self, repo_name, custom_path=None):
         if repo_name not in self.repos:
