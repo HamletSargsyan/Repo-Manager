@@ -8,10 +8,10 @@ class PackageManager:
         self._settings = Settings()
         self.repos = self._settings.get("repos")
 
-    def install(self, repo_name, custom_path=None):
+    def install(self, repo_name: str, custom_path=None):
         if repo_name not in self.repos:
-            self.repos[repo_name] = RepoManager(repo_name, custom_path)
-        self.repos[repo_name].install()
+            rpm = RepoManager(repo_name, custom_path)
+            rpm.install()
 
     def update(self, repo_name):
         if repo_name in self.repos:
